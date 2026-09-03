@@ -18,17 +18,19 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
         ]);
 
-        // 2. Create the Test User
-        $adminUser = User::factory()->create([
-            'name' => 'yared',
-            'email' => 'yared@example.com',
-            'password' => 'yared123', 
-        ]);
+        // 2. Safely find or create the user
+        $adminUser = User::firstOrCreate(
+            ['email' => 'yared@example.com'],
+            [
+                'name' => 'Yared',
+                'password' => 'yared123', // Automatically hashed by User model casts
+            ]
+        );
 
-        // 3. Attach 'admin' role using Eloquent relationship
+        // 3. Sync 'admin' role without throwing duplicate pivot errors
         $adminRole = Role::where('name', 'admin')->first();
         if ($adminRole) {
-            $adminUser->roles()->attach($adminRole->id);
+            $adminUser->roles()->syncWithoutDetaching([$adminRole->id]);
         }
     }
 }
