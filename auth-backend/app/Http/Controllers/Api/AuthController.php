@@ -20,7 +20,7 @@ class AuthController extends Controller
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => $request->password, // Automatically hashed by User model cast
+            'password' => $request->password, 
         ]);
 
         // Attach default 'user' role

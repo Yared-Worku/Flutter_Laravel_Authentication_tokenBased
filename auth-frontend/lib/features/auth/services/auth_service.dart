@@ -1,10 +1,19 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 import '../models/user.dart';
+import 'dart:io';
+import 'package:flutter/foundation.dart';
 
 class AuthService {
-  // Use 10.0.2.2 if testing on Android Emulator, or 127.0.0.1 for Windows/Web
-  static const String baseUrl = 'http://127.0.0.1:8000/api';
+  static String get baseUrl {
+    if (kIsWeb) {
+      return 'http://127.0.0.1:8000/api';
+    }
+    if (Platform.isAndroid) {
+      return 'http://10.0.2.2:8000/api'; 
+    }
+    return 'http://127.0.0.1:8000/api'; 
+  }
 
   // Helper headers
   Map<String, String> _headers([String? token]) {
