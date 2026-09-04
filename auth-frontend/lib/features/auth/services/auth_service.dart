@@ -93,7 +93,6 @@ class AuthService {
       final data = jsonDecode(response.body);
       return User.fromJson(data);
     }
-
     return null;
   }
 
