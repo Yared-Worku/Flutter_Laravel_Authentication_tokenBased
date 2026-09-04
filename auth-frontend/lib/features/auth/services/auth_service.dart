@@ -103,7 +103,6 @@ class AuthService {
       Uri.parse('$baseUrl/logout'),
       headers: _headers(token),
     );
-
     return response.statusCode == 200;
   }
 }
