@@ -6,7 +6,7 @@ import '../models/user.dart';
 class AuthService {
   final String baseUrl = AppConfig.baseUrl;
 
-  // Helper headers
+  // Helper headers 
   Map<String, String> _headers([String? token]) {
     final headers = {
       'Content-Type': 'application/json',
