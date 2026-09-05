@@ -66,7 +66,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-
               const SizedBox(height: 16),
               TextFormField(
                 controller: _passwordController,
