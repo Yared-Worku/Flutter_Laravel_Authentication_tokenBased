@@ -18,7 +18,6 @@ return new class extends Migration
             $table->unique(['user_id', 'role_id']);
         });
     }
-
     public function down(): void
     {
         Schema::dropIfExists('role_user');
