@@ -79,7 +79,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   return null;
                 },
               ),
-              
               const SizedBox(height: 24),
               authProvider.status == AuthStatus.loading
                   ? const CircularProgressIndicator()
