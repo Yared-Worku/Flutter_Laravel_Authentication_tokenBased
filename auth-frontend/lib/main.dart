@@ -53,6 +53,7 @@ class AuthWrapper extends StatelessWidget {
             child: CircularProgressIndicator(),
           ),
         );
+        
       case AuthStatus.authenticated:
         return const DashboardScreen();
       case AuthStatus.unauthenticated:
