@@ -25,7 +25,7 @@ class User {
       updatedAt: json['updated_at'] as String,
     );
   }
-  Map<String, dynamic> toJson() {
+  Map<String, dynamic> toJson() { 
     return {
       'id': id,
       'name': name,
