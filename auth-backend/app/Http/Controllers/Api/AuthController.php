@@ -52,7 +52,6 @@ class AuthController extends Controller
                 'user_agent' => $request->userAgent(),
                 'status' => 'failed',
             ]);
-
             throw ValidationException::withMessages([
                 'email' => ['The provided credentials do not match our records.'],
             ]);
