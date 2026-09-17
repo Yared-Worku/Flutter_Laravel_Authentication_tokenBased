@@ -9,7 +9,6 @@ class RegisterRequest extends FormRequest
     {
         return true; // Allow all users to access this public endpoint
     }
-
     public function rules(): array
     {
         return [
