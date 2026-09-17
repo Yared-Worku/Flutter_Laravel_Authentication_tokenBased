@@ -56,7 +56,6 @@ class AuthController extends Controller
                 'email' => ['The provided credentials do not match our records.'],
             ]);
         }
-
         // Log successful login attempt
         LoginHistory::create([
             'user_id' => $user->id,
