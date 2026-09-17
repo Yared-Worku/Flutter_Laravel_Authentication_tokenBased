@@ -10,7 +10,6 @@ use Illuminate\Database\Seeder;
 class DatabaseSeeder extends Seeder
 {
     use WithoutModelEvents;
-
     public function run(): void
     {
         // 1. Seed Roles first
