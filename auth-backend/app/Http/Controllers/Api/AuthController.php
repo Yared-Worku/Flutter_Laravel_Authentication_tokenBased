@@ -82,7 +82,6 @@ class AuthController extends Controller
             'message' => 'Successfully logged out',
         ]);
     }
-
     public function me(Request $request): JsonResponse
     {
         return response()->json(
