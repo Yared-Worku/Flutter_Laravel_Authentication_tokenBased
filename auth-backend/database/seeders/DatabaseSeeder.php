@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        // 3. Sync 'admin' role without throwing duplicate pivot errors
+        // Sync 'admin' role without throwing duplicate pivot errors
         $adminRole = Role::where('name', 'admin')->first();
         if ($adminRole) {
             $adminUser->roles()->syncWithoutDetaching([$adminRole->id]);
