@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
             RoleSeeder::class,
         ]);
 
-        // 2. Safely find or create the user
+        // Safely find or create the user
         $adminUser = User::firstOrCreate(
             ['email' => 'yared@example.com'],
             [
