@@ -1,14 +1,11 @@
 plugins {
     id("com.android.application")
-    // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
     id("dev.flutter.flutter-gradle-plugin")
 }
 
 android {
     namespace = "com.example.auth_frontend"
-    // Set explicit SDK 37 to satisfy flutter_secure_storage requirements
-    compileSdk = 37
-    
+    compileSdk = flutter.compileSdkVersion
     // Commented out to prevent Gradle from triggering automated NDK downloads/crashes
     // ndkVersion = flutter.ndkVersion
 
@@ -29,12 +26,6 @@ android {
         release {
             signingConfig = signingConfigs.getByName("debug")
         }
-    }
-}
-
-kotlin {
-    compilerOptions {
-        jvmTarget = org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17
     }
 }
 
